@@ -9,4 +9,8 @@ class Company extends Model {
     protected $primaryKey = 'id';
     protected $fillable = ['name', 'alias', 'abbreviation', 'deck', 'description', 'date_founded', 'location_address', 'location_city', 'location_country', 'location_state', 'phone', 'website'];
     public $timestamps = true;
+
+    function game_developers(){
+        return $this->hasMany(Game_developers::class, 'company_id', 'id');
+    }
 }

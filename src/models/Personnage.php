@@ -13,4 +13,8 @@ class Personnage extends Model {
     public function firstAppearedInGame() {
         return $this->belongsTo(Game::class, 'first_appeared_in_game_id');
     }
+
+    public function game2character() {
+        return $this->hasMany(Game2character::class, 'character_id', 'id');
+    }
 }

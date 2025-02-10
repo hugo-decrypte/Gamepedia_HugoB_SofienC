@@ -9,10 +9,10 @@ class Game2character extends Model {
     public $timestamps = false;
 
     public function game() {
-        return $this->belongsTo(Game::class, 'game_id');
+        return $this->belongsTo(Game::class, "game_id", 'id');
     }
 
-    public function character() {
-        return $this->belongsTo(Personnage::class, 'character_id');
+    public function personnage() {
+        return $this->belongsTo(Personnage::class, 'character_id', 'id');
     }
 }

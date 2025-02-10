@@ -10,4 +10,9 @@ class Rating_board extends Model
     protected $primaryKey = 'id';
     public $timestamps = false;
     protected $fillable = ['name', 'deck', 'description',];
+
+    public function game2rating()
+    {
+        return $this->hasMany('gamepedia\models\Game2rating', 'rating_board_id', 'id');
+    }
 }

@@ -16,4 +16,12 @@ class Game_developers extends Model
         'game_id',
         'comp_id',
     ];
+
+    function game(){
+        return $this->belongsTo('gamepedia\models\Game', 'game_id');
+    }
+
+    function company(){
+        return $this->belongsTo('gamepedia\models\Company', 'comp_id');
+    }
 }
