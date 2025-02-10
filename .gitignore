@@ -1,0 +1,6 @@
+/vendor/
+/composer.lock
+/.idea/php.xml
+/.idea/modules.xml
+/.idea/phpspec.xml
+/.idea/vcs.xml
