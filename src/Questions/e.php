@@ -15,12 +15,13 @@ echo "<h1>Lister les jeux, afficher leur nom et deck, en paginant (taille des pa
 
 // Taille de la page
 $taille = 300;
-
 // Page courante
 $page = isset($_GET['page']) && $_GET['page'] > 0 ? (int)$_GET['page'] : 1;
-
 // Calcul de l'offset
 $elementIgnore = ($page - 1) * $taille;
+
+
+$start = microtime(true);
 
 // Récupérer les jeux pour la page actuelle
 $games = Game::select('id', 'name', 'deck')
@@ -28,9 +29,16 @@ $games = Game::select('id', 'name', 'deck')
 ->take($taille)
 ->get();
 
+$end = microtime(true);
+$duration = $end - $start;
+echo "<center>La requête a pris " . round($duration * 1000, 2) . " ms.</center>";
+
+
+
 // Calcul des pages totales
 $totalGames = Game::count();
 $totalPages = ceil($totalGames / $taille);
+
 
 echo "<div style='text-align: center; margin: 20px;'>";
 
@@ -48,8 +56,8 @@ echo "<div style='text-align: center; margin: 20px;'>";
     echo "</div>";
 
 
-
     echo "<table border='1' style='border-collapse: collapse; margin: 20px auto;'>
+
     <thead>
     <tr>
         <th>ID</th>
