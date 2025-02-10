@@ -5,7 +5,8 @@
   "autoload": {
     "psr-4": {
       "gamepedia\\models\\": "src/models/",
-      "gamepedia\\configuration\\": "src/config/"
+      "gamepedia\\configuration\\": "src/config/",
+      "gamepedia\\Quest\\": "src/Questions"
     }
   },
   "require": {
