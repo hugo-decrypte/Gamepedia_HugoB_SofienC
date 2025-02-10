@@ -1,18 +1,23 @@
-# Default ignored files
-/shelf/
-/workspace.xml
-# Editor-based HTTP Client requests
-/httpRequests/
-# Datasource local storage ignored files
-/dataSources/
-/dataSources.local.xml
-*.ini
-../vendor
+# IntelliJ / PhpStorm / IDE settings
+.idea/
+workspace.xml
+shelf/
+httpRequests/
+dataSources/
+dataSources.local.xml
+
+# Composer, Node.js, système et fichiers sensibles
+/vendor
 /node_modules
 .env
+*.log
 composer.lock
-.idea
 .DS_Store
+
+# Fichiers de configuration
+*.ini
+
+
 *.log
 *.cache
 /Gamepedia_HugoB_SofienC.iml
