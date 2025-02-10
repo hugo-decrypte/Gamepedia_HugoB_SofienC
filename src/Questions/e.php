@@ -1,12 +1,11 @@
 <?php
-
 namespace gamepedia\Quest;
 
 require_once __DIR__ . '/../../vendor/autoload.php';
 
 use gamepedia\configuration\Base;
 use gamepedia\configuration\DB;
-use gamepedia\models\Game;
+
 
 DB::init();
 Base::init();
