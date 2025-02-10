@@ -13,12 +13,18 @@ Base::init();
 
 echo "<h1>Afficher les personnages des jeux dont le nom (du jeu) débute par « Mario » </h1>";
 
+$start = microtime(true);
+
 $persos = Personnage::select("id","name", "deck")->whereHas("game2character", function ($query) {
     $query->whereHas("game", function ($query) {
         $query->where("name", "LIKE", "Mario%");
     });
 })->orderBy("id")
     ->get();
+
+$end = microtime(true);
+$duration = $end - $start;
+echo "<center>La requête a pris " . round($duration * 1000, 2) . " ms.</center>";
 
 echo "<table border='1' style='border-collapse: collapse;'>
     <thead>

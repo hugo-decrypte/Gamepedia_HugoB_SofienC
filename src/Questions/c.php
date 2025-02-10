@@ -14,8 +14,13 @@ Base::init();
 
 echo "<h1>Lister les plateformes dont la base installée est >= 10 000 000 ;</h1>";
 
+$start = microtime(true);
 
 $platforms = Platform::where('install_base','>=' ,'10000000')->select("name", "alias", "id")->get();
+
+$end = microtime(true);
+$duration = $end - $start;
+echo "<center>La requête a pris " . round($duration * 1000, 2) . " ms.</center>";
 
 echo "<table border='1' style='border-collapse: collapse;'>
     <thead>
