@@ -1,0 +1,15 @@
+{
+  "name": "gamepedia/gamepedia",
+  "version": "1.0.0",
+  "description": "projet DWM2 Gamepedia",
+  "autoload": {
+    "psr-4": {
+      "gampedia\\models\\": "src/models/",
+      "gamepedia\\configuration\\": "src/config/"
+    }
+  },
+  "require": {
+    "illuminate/database": "^8.0",
+    "ext-pdo": "*"
+  }
+}
