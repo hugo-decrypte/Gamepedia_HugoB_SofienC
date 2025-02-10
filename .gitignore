@@ -1,0 +1,20 @@
+# IntelliJ / PhpStorm / IDE settings
+.idea/
+workspace.xml
+shelf/
+httpRequests/
+dataSources/
+dataSources.local.xml
+
+# Composer, Node.js, système et fichiers sensibles
+/vendor
+/node_modules
+.env
+*.log
+composer.lock
+.DS_Store
+
+# Fichiers de configuration
+*.ini
+
+
