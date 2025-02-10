@@ -22,6 +22,5 @@ class DB {
         ]);
         $capsule->setAsGlobal();
         $capsule->bootEloquent();
-        echo "Connexion réussi";
     }
 }

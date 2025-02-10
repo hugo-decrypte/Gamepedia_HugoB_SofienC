@@ -4,8 +4,10 @@ namespace gamepedia\configuration;
 class Base
 {
     public static function init(){
-        echo "<nav>
-Questions : 
+        echo "
+<link rel='stylesheet' href='../css/style.css'>
+<nav>
+<h1 class='Question'>Questions</h1>
 <a href='../Questions/a.php'>A</a>
 <a href='../Questions/b.php'>B</a>
 <a href='../Questions/c.php'>C</a>
