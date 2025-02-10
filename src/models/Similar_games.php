@@ -2,7 +2,9 @@
 
 namespace gampedia\models;
 
-class Similar_games
+use Illuminate\Database\Eloquent\Model;
+
+class Similar_games extends Model
 {
 
 }

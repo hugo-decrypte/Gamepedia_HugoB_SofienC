@@ -2,7 +2,9 @@
 
 namespace gampedia\models;
 
-class Game_rating
+use Illuminate\Database\Eloquent\Model;
+
+class Game_rating extends Model
 {
 
 }

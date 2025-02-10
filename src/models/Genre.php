@@ -2,7 +2,9 @@
 
 namespace gampedia\models;
 
-class Genre
+use Illuminate\Database\Eloquent\Model;
+
+class Genre extends Model
 {
 
 }

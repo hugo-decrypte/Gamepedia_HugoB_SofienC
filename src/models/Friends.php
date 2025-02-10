@@ -2,7 +2,9 @@
 
 namespace gampedia\models;
 
-class Friends
+use Illuminate\Database\Eloquent\Model;
+
+class Friends extends Model
 {
 
 }

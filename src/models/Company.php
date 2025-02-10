@@ -2,7 +2,9 @@
 
 namespace gampedia\models;
 
-class Company
+use Illuminate\Database\Eloquent\Model;
+
+class Company extends Model
 {
 
 }

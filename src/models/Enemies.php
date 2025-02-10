@@ -2,7 +2,9 @@
 
 namespace gampedia\models;
 
-class Enemies
+use Illuminate\Database\Eloquent\Model;
+
+class Enemies extends Model
 {
 
 }

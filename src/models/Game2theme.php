@@ -2,7 +2,9 @@
 
 namespace gampedia\models;
 
-class Game2theme
+use Illuminate\Database\Eloquent\Model;
+
+class Game2theme extends Model
 {
 
 }

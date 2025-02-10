@@ -2,7 +2,9 @@
 
 namespace gampedia\models;
 
-class Game2character
+use Illuminate\Database\Eloquent\Model;
+
+class Game2character extends Model
 {
 
 }
