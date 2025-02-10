@@ -1,6 +1,6 @@
 <?php
 
-namespace gampedia\models;
+namespace gamepedia\models;
 
 use Illuminate\Database\Eloquent\Model;
 

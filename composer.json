@@ -4,7 +4,7 @@
   "description": "projet DWM2 Gamepedia",
   "autoload": {
     "psr-4": {
-      "gampedia\\models\\": "src/models/",
+      "gamepedia\\models\\": "src/models/",
       "gamepedia\\configuration\\": "src/config/"
     }
   },

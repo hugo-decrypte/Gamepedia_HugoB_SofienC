@@ -1,10 +1,14 @@
 <?php
 
-namespace gampedia\models;
+namespace gamepedia\models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Game2platform extends Model
-{
+class Game2platform extends Model {
+    protected $table = 'game2platform';
+    public $timestamps = false;
 
+    public function game() {
+        return $this->belongsTo(Game::class, 'game_id');
+    }
 }
