@@ -31,4 +31,8 @@ class Platform extends Model
         'online_support' => 'boolean',
     ];
 
+    function company(){
+        return $this->belongsTo('gamepedia\models\Company', 'c_id');
+    }
+
 }

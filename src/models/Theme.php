@@ -10,4 +10,7 @@ class Theme extends Model {
     protected $primaryKey = 'id';
     public $timestamps = false;
 
+    function game2theme(){
+        return $this->hasMany(Game2theme::class, 'theme_id', 'id');
+    }
 }

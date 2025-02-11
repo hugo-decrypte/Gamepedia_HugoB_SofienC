@@ -16,4 +16,11 @@ class Game2theme extends Model
         'game_id',
         'theme_id',
     ];
+
+    function game(){
+        return $this->belongsTo('gamepedia\models\Game', 'game_id');
+    }
+    function theme(){
+        return $this->belongsTo('gamepedia\models\Theme', 'theme_id');
+    }
 }

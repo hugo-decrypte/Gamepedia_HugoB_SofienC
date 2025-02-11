@@ -11,4 +11,7 @@ class Game2platform extends Model {
     public function game() {
         return $this->belongsTo(Game::class, 'game_id');
     }
+    public function platform() {
+        return $this->belongsTo(Platform::class, 'platform_id');
+    }
 }

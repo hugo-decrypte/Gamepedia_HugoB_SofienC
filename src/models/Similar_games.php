@@ -11,4 +11,11 @@ class Similar_games extends Model
 
     //protected $primaryKey = '';
     public $timestamps = false;
+
+    function game1() {
+        return $this->belongsTo(Game::class, 'game1_id');
+    }
+    function game2() {
+        return $this->belongsTo(Game::class, 'game2_id');
+    }
 }
