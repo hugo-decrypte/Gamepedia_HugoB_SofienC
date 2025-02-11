@@ -9,6 +9,9 @@ class Game2rating extends Model {
     public $timestamps = false;
 
     public function game() {
-        return $this->belongsTo(Game::class, 'game_id');
+        return $this->belongsTo(Game::class, 'game_id', "id");
+    }
+    public function game_rating() {
+        return $this->belongsTo(Game_rating::Class, 'rating_id');
     }
 }
