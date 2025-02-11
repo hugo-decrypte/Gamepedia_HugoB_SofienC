@@ -17,4 +17,17 @@ class Game extends Model {
     public function game_developers() {
         return $this->hasMany(Game_developers::class, 'game_id', 'id');
     }
+
+    public function game2rating() {
+        return $this->hasMany(Game2rating::class, 'game_id', 'id');
+    }
+    public function game2genre() {
+        return $this->hasMany(Game2genre::class, 'game_id', 'id');
+    }
+    public function game2platform() {
+        return $this->hasMany(Game2platform::class, 'game_id', 'id');
+    }
+    public function game2theme() {
+        return $this->hasMany(Game2theme::class, 'game_id', 'id');
+    }
 }

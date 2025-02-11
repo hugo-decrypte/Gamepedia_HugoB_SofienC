@@ -13,9 +13,12 @@ class Game_rating extends Model
         'name',
         'rating_board_id',
     ];
-    public function ratingBoard()
-    {
-        return $this->belongsTo(Rating_board::class, 'rating_board_id');
+    public function rating_board() {
+        return $this->belongsTo(Rating_board::class, 'rating_board_id', 'id');
+    }
+
+    public function game2rating() {
+        return $this->hasMany(Game2rating::class, 'rating_id', 'id');
     }
 
 }
