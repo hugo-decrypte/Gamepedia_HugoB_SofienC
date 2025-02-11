@@ -11,7 +11,7 @@ class Game extends Model {
     public $timestamps = true;
 
     public function game2character() {
-        return $this->hasMany(Theme::class, 'game_id', 'id');
+        return $this->hasMany(Game2character::class, 'game_id', 'id');
     }
 
     public function game_developers() {
