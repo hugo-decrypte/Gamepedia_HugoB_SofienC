@@ -30,4 +30,10 @@ class Game extends Model {
     public function game2theme() {
         return $this->hasMany(Game2theme::class, 'game_id', 'id');
     }
+
+    public function game_publishers()
+    {
+        return $this->hasMany(Game_publishers::class, 'game_id', 'id');
+    }
+
 }
