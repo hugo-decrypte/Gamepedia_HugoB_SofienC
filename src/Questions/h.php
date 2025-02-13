@@ -16,7 +16,7 @@ echo "<h1>Afficher les jeux développés par une compagnie dont le nom contient 
 
 $start = microtime(true);
 
-$games = Game::whereHas("game_developers", function ($query) {
+$games = Game::whereHas("gameDeveloper", function ($query) {
     $query->whereHas("company", function ($query) {
         $query->where("name", "LIKE", "%Sony%");
     });

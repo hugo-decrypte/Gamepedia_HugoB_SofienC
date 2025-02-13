@@ -15,11 +15,12 @@ echo "<h1>Afficher les personnages des jeux dont le nom (du jeu) débute par « 
 
 $start = microtime(true);
 
-$persos = Personnage::select("id","name", "deck")->whereHas("game2character", function ($query) {
+$persos = Personnage::select("id","name", "deck")->whereHas("game2Character", function ($query) {
     $query->whereHas("game", function ($query) {
         $query->where("name", "LIKE", "Mario%");
     });
-})->orderBy("id")
+})  ->orderBy("id")
+    ->select("id", "name", "deck")
     ->get();
 
 $end = microtime(true);

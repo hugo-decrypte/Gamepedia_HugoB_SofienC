@@ -4,7 +4,7 @@ namespace gamepedia\models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Game_rating extends Model
+class GameRating extends Model
 {
     protected $table = 'game_rating';
     protected $primaryKey = 'id';
@@ -13,8 +13,8 @@ class Game_rating extends Model
         'name',
         'rating_board_id',
     ];
-    public function rating_board() {
-        return $this->belongsTo(Rating_board::class, 'rating_board_id', 'id');
+    public function ratingBoard() {
+        return $this->belongsTo(RatingBoard::class, 'rating_board_id', 'id');
     }
 
     public function game2rating() {

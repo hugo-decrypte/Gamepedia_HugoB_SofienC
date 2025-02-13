@@ -5,6 +5,8 @@ require_once __DIR__ . '/../../vendor/autoload.php';
 
 use gamepedia\configuration\Base;
 use gamepedia\configuration\DB;
+use gamepedia\models\Game;
+use gamepedia\models\GameRating;
 
 
 DB::init();
@@ -12,3 +14,33 @@ Base::init();
 
 
 echo '<h1>Afficher les jeux dont le nom débute par « Mario » et dont le rating initial contient "3+" ;!</h1>';
+
+
+$start = microtime(true);
+$games = Game::whereHas("game2rating", function ($q) {
+    $q->whereHas("gameRating", function ($q) {
+        $q->where("name", "like", "%3+%");
+    });
+})->where("name", "like", "%Mario%")
+    ->select("name")
+    ->get();
+
+$end = microtime(true);
+$duration = $end - $start;
+echo "<center>La requête a pris " . round($duration * 1000, 2) . " ms.</center>";
+
+
+echo "<table border='1' style='border-collapse: collapse;'>
+    <thead>
+        <tr>
+            <th>Nom du jeu</th>
+        </tr>
+    </thead>
+    <tbody>";
+
+foreach ($games as $game) {
+        echo "<tr>
+                <td>" . htmlspecialchars($game->name) . "</td>
+              </tr>";
+}
+echo "</tbody></table>";

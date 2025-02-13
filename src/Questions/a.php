@@ -15,13 +15,16 @@ echo "<h1>Lister les jeux dont le nom contient « Marine »</h1>";
 
 $start = microtime(true);
 
-$games = Game::where('name', 'LIKE', '%Marine%')->select("name", "alias", "id")->get();
+$games = Game::where('name', 'LIKE', '%Marine%') // filtre des nom ayant Marine
+    ->select("name", "alias", "id") // selectionne seulement les lignes "name", "alias" et "id"
+    ->get();
 
 
 $end = microtime(true);
 $duration = $end - $start;
 echo "<center>La requête a pris " . round($duration * 1000, 2) . " ms.</center>";
 
+// première ligne du tableau
 echo "<table border='1' style='border-collapse: collapse;'>
     <thead>
         <tr>
@@ -33,6 +36,7 @@ echo "<table border='1' style='border-collapse: collapse;'>
     <tbody>";
 
 foreach ($games as $game) {
+    // affiche tout les elements selectionner pour chaque ligne
     echo "<tr>" .
         "<td>" . $game->id . "</td>" .
         "<td>" . $game->name . "</td>" .

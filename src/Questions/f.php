@@ -17,9 +17,11 @@ echo "<h1>Afficher (name , deck) les personnages du jeu 12342 ;</h1>";
 
 $start = microtime(true);
 
-$persos = Personnage::select("name", "deck")->whereHas("game2character", function ($query) {
+$persos = Personnage::select("name", "deck")->whereHas("game2Character", function ($query) {
     $query->where("game_id", "=", 12342);
-})->get();
+})
+    ->select("name", "deck")
+    ->get();
 
 $end = microtime(true);
 $duration = $end - $start;

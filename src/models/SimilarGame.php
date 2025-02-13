@@ -4,7 +4,7 @@ namespace gamepedia\models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Similar_games extends Model
+class SimilarGame extends Model
 {
     protected $table = 'similar_games';
     protected $fillable = ['game1_id', 'game2_id'];

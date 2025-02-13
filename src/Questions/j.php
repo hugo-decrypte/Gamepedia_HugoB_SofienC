@@ -20,11 +20,11 @@ echo "<h1>Afficher les jeux dont le nom débute par « Mario » et ayant plus de
 $start = microtime(true);
 
 $gamesMario3 = Game::where('name', 'like', 'Mario%')
-    ->whereHas('game2character', function ($query) {
+    ->whereHas('game2Character', function ($query) {
         $query->groupBy('game_id')
             ->havingRaw('count(*)> 3');
     })
-    ->withCount('game2character')
+    ->withCount('game2Character')
     ->select("id","name","deck")
     ->get();
 
