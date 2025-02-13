@@ -14,33 +14,24 @@ class Game extends Model {
     ];
     public $timestamps = true;
 
-    public function game2character()
-    {
+    public function game2character() {
         return $this->hasMany(Game2character::class, 'game_id', 'id');
     }
 
-    public function gameDeveloper()
-    {
+    public function gameDeveloper(){
         return $this->hasMany(GameDeveloper::class, 'game_id', 'id');
     }
 
-    public function game2rating()
-    {
+    public function game2rating() {
         return $this->hasMany(Game2rating::class, 'game_id', 'id');
     }
-
-    public function game2genre()
-    {
+    public function game2genre() {
         return $this->hasMany(Game2genre::class, 'game_id', 'id');
     }
-
-    public function game2platform()
-    {
+    public function game2platform() {
         return $this->hasMany(Game2platform::class, 'game_id', 'id');
     }
-
-    public function game2theme()
-    {
+    public function game2theme() {
         return $this->hasMany(Game2theme::class, 'game_id', 'id');
     }
 
